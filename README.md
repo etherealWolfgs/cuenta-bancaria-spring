@@ -29,3 +29,7 @@
 5. En tu proyecto de Empleados de la Semana 3 nunca escribiste `@ComponentScan`. ¿Quién lo hace? (Pista: abre la anotación `@SpringBootApplication` con `Ctrl+clic` y busca las anotaciones que tiene arriba.)
 
     Es el mismo `@SpringBootApplication`, ya que esta anotación es una anotación compuesta. Eso quiere decir que en su código fuente ya tiene integrado el @ComponentScan, además de @EnableAutoConfiguration y @SpringBootConfiguration. Ejecutando estas anotaciones en automático por detrás.
+
+
+
+   Los ejericcios de simulación de module ya se encuentran en la carperta Simuladores_ejercicios!
