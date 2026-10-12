@@ -1,1 +1,421 @@
+FUNDAMENTOS 
 
+1. D)
+
+JDK es una caja de herramientas para construir programas. En él se incluyen el compilador javac( encargado de traducir el código escrito en archivos .java a bytecode compilado en .class), el intérprete/java (que ejecuta el bytecode en cualquier sistema operativo), jdb para depurar, javadoc para generar documentación automática  y jar para crear paquetes distribuibles.  
+
+2. E)
+
+jar es la herramienta integrada en el JDK diseñada específicamente para agrupar y comprimir todas las clases ya compiladas  y sus recursos en un único archivo de extensión .jar listo para su distribución.
+
+3. D)
+
+jconsole es una herramienta gráfica integrada en el JDK que se conecta a la Máquina Virtual de Java (JVM) para monitorear y gestionar aplicaciones en tiempo real, permitiendo revisar métricas visuales como el uso de memoria Heap, el estado de los hilos, la carga de CPU y la actividad del Garbage Collector
+
+4. D)
+
+La opción boolean j \= (1 \&lt; 5); es la única válida porque en Java el tipo primitivo boolean solo admite de manera estricta los valores true o false; al evaluar la expresión relacional (1 \&lt; 5\) el resultado es true, asignándose correctamente a la variable, mientras que usar enteros como 0 o 1 causa un error de compilación por tipos incompatibles y un primitivo jamás puede ser null.
+
+5. D), E), F)
+
+Las opciones correctas son d, e y f porque utilizan expresiones relacionales y lógicas que se evalúan directamente como valores booleanos válidos, mientras que las demás provocan errores de compilación al intentar asignar un entero en a (\-10), un texto entre comillas en b (String), o usar el operador de asignación \= en lugar del de comparación \== en c.
+
+6. E)
+
+En java se aplican las reglas de promoción numérica binaria, según las cuales si al menos uno de los operandos en una operación aritmética es de tipo double, el otro operando (en este caso el short) se promociona automáticamente a double antes de realizar la operación, haciendo que el resultado final sea de tipo double.
+
+7. B)
+
+primero a se inicializa en 0 y pasa a valer 1 con el primer a++; posteriormente, la instrucción System.out.println(a++) imprime el valor actual (1) y justo después incrementa a a 2 debido al operador de post-incremento, por lo que el segundo System.out.println(a) imprime el valor actualizado de 2.
+
+8. C)
+
+b se inicializa en 4, disminuye a 3 con el primer decremento (b--) y se reduce a 2 mediante el pre-decremento (\--b), imprimiéndose primero ese 2 con System.out.print sin salto de línea e imprimiendo inmediatamente después el valor actualizado de b (2) con System.out.println
+
+9. C)
+
+En java el operador lógico AND (&&) tiene mayor precedencia que el operador OR (||), evaluándose primero (a && b) como false (true && false), para luego evaluar false || a (false || true), lo que da como resultado final true.
+
+10. B)
+
+Al evaluar la expresión lógica x && y || \!x, el operador NOT (\!x) resulta en false, el operador AND (true \&amp;\&amp; false) resulta en false, y finalmente la operación OR entre ambos resultados (false || false) da como resultado final false.
+
+11. B)
+
+en la primera línea los operadores \+ se evalúan de izquierda a derecha realizando una concatenación de cadenas de texto que produce "Result:35", mientras que en la segunda línea los paréntesis fuerzan a que primero se calcule la suma aritmética (3 \+ 5 \= 8\) antes de concatenar el resultado con la cadena de texto, produciendo "Result:8".
+
+12. B)
+
+En la primera línea los operadores \+ se evalúan de izquierda a derecha realizando una concatenación de cadenas de texto que produce "Result:35", mientras que en la segunda línea los paréntesis fuerzan a que primero se calcule la suma aritmética (3 \+ 5 \= 8\) antes de concatenar el resultado con la cadena de texto, produciendo "Result:8".
+
+13. 13
+
+El resultado impreso es 13, ya que el operador de OR a nivel de bits compara las representaciones binarias de 9 (1001) y 4 (0100) posición por posición, dando como resultado el número binario 1101, el cual equivale a 13 en el sistema decimal.
+
+14. A), B), D)
+
+Una variable de tipo  boolean se puede inicializar directamente con los literales true o false, o mediante despaquetado automático asignando la constante wrapper Boolean.FALSE, mientras que intentar asignar el entero 0 en c o el texto "false" entre comillas en e provoca un error de compilación por tipos incompatibles.
+
+15. A). B), D), E)
+
+El operador AND condicional (\&amp;\&amp;), el OR condicional (||), la igualdad (==) y el OR lógico no cortocircuitado (|) son todos válidos para operar con valores booleanos, mientras que el operador \+ no se puede aplicar directamente entre operandos booleanos y genera un error de compilación.
+
+16. B), D)
+
+Es válido declarar múltiples variables del mismo tipo separadas por comas en una sola instrucción (int a, b, c;), mientras que la línea 15 falla por usar Int con mayúscula en lugar del tipo primitivo int, la línea 17 provoca un error sintáctico al repetir la palabra reservada int después de cada coma, y la línea 19 falla tanto por la mayúscula en Int como por colocar una coma sobrante antes del operador de asignación.
+
+17.  E)
+
+el tipo byte es con signo (de \-128 a 127\) y el tipo char es sin signo (de 0 a 65535), por lo que no existe una conversión implícita (widening) entre ellos y el compilador genera un error por tipos incompatibles al intentar asignar una variable byte no final a un char sin realizar un cast explícito (char).
+
+18. B)
+
+JVM busca exactamente el método de entrada con la firma public static void main(String\[\] args) (donde el uso del modificador final es totalmente válido y permitido), ignorando las demás sobrecargas por no cumplir con la firma estándar exigida para el punto de inicio de la ejecución.
+
+19.  C), D)
+
+Ambas opciones poseen la firma válida del método principal (String\[\] args) y se ejecutan sin lanzar excepciones (la c imprime la referencia en memoria del arreglo y la d imprime "walls" al acceder al segundo argumento args\[1\]), mientras que la a falla en tiempo de ejecución con un ArrayIndexOutOfBoundsException al intentar acceder al índice args\[2\] que no existe (solo hay dos argumentos) y la b falla al ejecutarse porque su método main recibe un String individual en lugar de un arreglo de cadenas.
+
+20. B)
+
+La operación de multiplicación entre el long l y el entero 10 resulta en un long, y la división posterior del short s entre ese valor promociona toda la expresión a long, siendo este el tipo de retorno válido más estrecho (narrowest) sin requerir un casteo explícito.
+
+21. B)
+
+La multiplicación entre el long l y el literal 10 resulta en un long, y la posterior división del short s entre dicho resultado promociona toda la expresión a long, siendo este el tipo de retorno válido más estrecho (narrowest) sin necesidad de realizar un casteo explícito.
+
+22. B)
+
+De los tipos de punto flotante disponibles (float y double), float es el más restringido (32 bits) y Java permite la conversión implícita desde el resultado long de la expresión s / (l \* 10\) hacia un float sin requerir un casteo explícito.
+
+23. C), D) 
+
+d representa la declaración estándar del método principal en Java (public static void main(String\[\] args)) y c también es totalmente válida debido a que la notación varargs (String...) se compila como un arreglo (String\[\]) y la palabra String al final actúa como un nombre de parámetro válido, mientras que la opción a carece del modificador public, la b retorna un int en lugar de void, y la e es private, lo que impide que la JVM los utilice como punto de entrada de la aplicación.
+
+24. B), D), E) 
+
+al utilizar el comando java \-jar, Java ignora por completo la variable de entorno CLASSPATH y las opciones de classpath indicadas en la línea de comandos (-cp o \-classpath), requiriendo obligatoriamente que el archivo sea un JAR ejecutable que contenga dentro el archivo META-INF/MANIFEST.MF especificando el atributo Main-Class para saber cuál es la clase principal a ejecutar.
+
+CONTROL DE FLUJO 
+
+1. b)
+
+El ciclo for mejorado se puede utilizar con cualquier tipo de colección y matriz, ya que el ciclo for-each está diseñado para operar sobre cualquier arreglo (matriz) y sobre cualquier objeto que implemente la interfaz java.lang.Iterable (como las colecciones de Java). Las demás opciones son incorrectas porque no está limitado únicamente a arreglos (a), requiere obligatoriamente la interfaz Iterable para colecciones (d), y no permite modificar la estructura de la colección durante la iteración sin provocar excepciones como ConcurrentModificationException (c).
+
+2. C)
+
+Al calcular w \= 10 \* z, la operación equivale a 10 \* 0, resultando en 0\.
+
+3. B)
+
+El ciclo for evalúa los valores de i desde 0 hasta 9 (10 iteraciones en total), y la condición i % 2 \== 0 se cumple únicamente para los 5 números pares del rango: 0, 2, 4, 6 y 8\.
+
+4. A)
+
+El bucle exterior (i) se ejecuta para los valores 1, 2 y 3\. Para cada valor de i, el bucle interior (j) completa 2 iteraciones (con j \= 1 y j \= 2), imprimiendo sucesivamente la combinación de ambos contadores.
+
+5. C)
+
+La instrucción se ejecuta el número de veces resultante de multiplicar las iteraciones de cada bucle anidado: 4 ejecuciones del bucle exterior, por 3 del intermedio, por 2 del interior (4 × 3 × 2 \= 24).
+
+6. D)
+
+La variable ii se inicializa en 2 y nunca se modifica dentro del bloque del bucle, haciendo que la condición ii mayor que 0 siempre se evalúe como verdadera e imprima el valor 2 de forma indefinida.
+
+7. B)
+
+La condición de un bucle while exige estrictamente una expresión de tipo boolean, por lo que intentar evaluar la operación de decremento \--ii (que resulta en un valor entero) genera un error de compilación por tipos incompatibles.
+
+8. E)
+
+Para que el bucle incremente jj un total de 5 veces antes de romper la condición ii mayor que 6 (al llegar a 6), la variable ii debe inicializarse en 11 e ir decrementándose de uno en uno durante las 5 iteraciones correspondientes a los valores 11, 10, 9, 8 y 7\.
+
+9. B)
+
+el bucle suma los elementos en posiciones de índice par (arr\[0\] \= 1, arr\[2\] \= 3 y arr\[4\] \= 5, sumando 9\) y resta los de posiciones de índice impar (arr\[1\] \= 2 y arr\[3\] \= 4, restando 6), dando como resultado final 1 \- 2 \+ 3 \- 4 \+ 5 \= 3\.
+
+10. A)
+
+con value \= 33 se cumplen las condiciones value \!= 0 (imprime "the "), value mayor que 30 (imprime "fox" omitiendo las cláusulas else if), y value mayor que 10 (imprime "lazy "), finalizando con el "..." fuera de las estructuras condicionales.
+
+11. C)
+
+Al coincidir con el caso "Red", el programa ejecuta su instrucción y continúa hacia los casos siguientes por efecto del fall-through al carecer de sentencias break, deteniendo su ejecución únicamente cuando encuentra el break al final de "White".
+
+12.  E)
+
+Al coincidir la variable d con el caso TUESDAY, y incrementa a 11 (1 \+ 10\) y, al no haber sentencias break, la ejecución continúa evaluando las instrucciones de los casos siguientes por efecto del fall-through, sumando 100 en WEDNESDAY (111) y 1000 en THURSDAY (1111).
+
+13. F)
+
+Al coincidir grade con el case 'B' se imprime "B", y al no haber sentencias break, la ejecución continúa por efecto del fall-through imprimiendo sucesivamente "C" en el case 'C' y "F" en los casos finales.
+
+14.  F)
+
+Al coincidir grade con el case 'B' se imprime "B", y al no haber una sentencia break inmediatamente después, la ejecución continúa por efecto del fall-through hacia el case 'C' imprimiendo "C", momento en el cual la instrucción break detiene y finaliza la ejecución del switch.
+
+15. B)
+
+el bucle while se evalúa 6 veces e incrementa el contador x hasta llegar a 6 (fallando la condición post-incremento al comparar 5 menor a 5), lo que provoca que la expresión ternaria x mayor que 5 sea verdadera y asigne "greater than" a la variable message.
+
+16. E)
+
+El bucle for se ejecuta 3 veces e incrementa ii en cada iteración imprimiendo sucesivamente 0, 1 y finalmente 2 una sola vez en la última vuelta.
+
+17. D)
+
+La variable estática b se inicializa por defecto en false, lo que provoca que ni la primera condición if (b), ni la asignación b \= false del segundo else if (que devuelve false), ni la tercera condición resulten verdaderas, derivando el flujo de ejecución hacia el bloque else donde a x se le asigna el valor 4
+
+18. D)
+
+En Java la condición de un bucle while requiere estrictamente una expresión de tipo boolean, siendo esta la única alternativa que devuelve un valor booleano (false), mientras que las demás opciones evalúan en valores numéricos de tipo int o asignaciones incompatibles.
+
+19. A)
+
+El ciclo for ejecuta primero la inicialización (1), evalúa la condición (2), ejecuta el cuerpo (4), aplica la actualización (3), evalúa de nuevo la condición (2), ejecuta el cuerpo (4), actualiza (3) y evalúa por última vez la condición (2) rompiendo el bucle cuando x llega a 3, acumulando un total de 8 llamadas al método test.
+
+20.  D)
+
+z \= 4 genera la secuencia del 1 al 4 en cada línea, y \= 3 provoca que el bucle do-while imprima 3 filas en la primera iteración del for (mientras j incrementa de 0 a 3\) y solo 1 fila en la segunda iteración (dado que j no se reinicia y mantiene el valor 3), mientras que x \= 2 limita el ciclo exterior a exactamente dos iteraciones con sus respectivas divisiones "---".
+
+## Strings y clases envoltorio 
+
+1. B)
+
+el método append() es la forma estándar en Java para añadir texto al final de un StringBuilder, mientras que add() no existe para esta clase, la sintaxis con \+= solo aplica a objetos String, e insert() exige un índice numérico de posición como primer parámetro.
+
+2. A)
+
+replace() es el método estándar de la clase String en Java diseñado para sustituir todas las ocurrencias de un carácter determinado por uno nuevo, mientras que las alternativas change(), modify(), substitute() y swap() no existen en dicha clase.
+
+3. A)
+
+El método equals() compara el contenido o valor textual de las cadenas, mientras que el operador \== evalúa si ambas variables apuntan al mismo objeto en memoria (lo cual es falso en este caso porque h2 se creó explícitamente en una nueva ubicación mediante la palabra reservada new), y las demás alternativas no existen o incurren en la misma comparación de referencias.
+
+4. C)
+
+La cadena "Hello World" consta de 11 caracteres con índices válidos de 0 a 10\. Al intentar acceder a charAt(11), el método detecta que el índice es igual o superior a la longitud del String y lanza una excepción StringIndexOutOfBoundsException en tiempo de ejecución.
+
+5. D)
+
+los objetos de la clase String en Java son inmutables. El método s.toUpperCase() genera y retorna una nueva cadena en mayúsculas sin modificar la instancia original, y al no reasignar ese valor retornado a la variable, msg conserva intacto su texto original "message".
+
+6. A)
+
+las cadenas en Java son inmutables y los métodos substring() y concat() no modifican la variable a al no reasignarse sus resultados, por lo que la asignación compuesta a \+= ... simplemente concatena la cadena original "tic" con "game" y "TAC" (b.toUpperCase()).
+
+7. C)
+
+las tres variables contienen el mismo texto ("Hello World") haciendo que las comparaciones de contenido con .equals() sean verdaderas (true), pero al ser creadas mediante distintas operaciones en tiempo de ejecución (+, .concat() y StringBuilder), se generan objetos independientes en memoria heap, resultando falsas (false) las comparaciones de referencia con \==
+
+8. A)
+
+str1 apunta a un objeto independiente en la memoria heap, mientras que str2 apunta al literal en el String pool; al invocar str1.intern(), str3 obtiene la referencia canónica almacenada en el pool (igual a str2), por lo que la primera y tercera comparación devuelven false y la segunda devuelve true.
+
+9. D)
+
+s1 y s3 apuntan a la misma referencia en el String pool (true), s2 es un objeto independiente creado en la memoria heap (false), y s4 recibe mediante intern() la referencia canónica del pool, la cual es idéntica a la de s1 (true)
+
+10.  A)
+
+La expresión regular \\\\D divide la cadena en cada carácter no numérico produciendo el arreglo \["", "1", "2", "3", "4", "5", "6"\] (incluyendo un elemento vacío inicial generado por la 'a' al principio), por lo que el bucle imprime un espacio inicial seguido de los números separados por espacio " 1 2 3 4 5 6 "
+
+11. C)
+
+la variable de instancia i de tipo Integer se inicializa por defecto en null, por lo que al intentar ejecutar la operación i \+ y en la línea 5, Java intenta realizar un desempaquetado automático (unboxing) sobre una referencia nula, desencadenando una excepción de tipo NullPointerException en tiempo de ejecución
+
+12.  C)
+
+String es inmutable y la llamada a modify(str) no altera el valor original "Hello", mientras que StringBuffer y StringBuilder sí son mutables, modificando sus objetos a "Hello World", por lo cual replace(2, 11, "o") sustituye desde el índice 2 en adelante dejando "Heo", y finalmente reverse() invierte completamente la cadena "Hello World" resultando en "dlroW olleH"
+
+## Arreglos
+
+1. B), C), D)
+
+Las opciones b (sintaxis abreviada con llaves), c (inicialización explícita de arreglo anónimo) y d (reserva de memoria por tamaño) son formas completamente válidas de inicializar arreglos en Java, mientras que la opción a es inválida ya que el uso de paréntesis (...) no está permitido para literales de arreglos
+
+2. D)
+
+el bucle recorre la diagonal principal de la matriz acumulando en la variable result los elementos array\[0\]\[0\] (1), array\[1\]\[1\] (5) y array\[2\]\[2\] (9), lo que da como suma total 15\.
+
+3. C)
+
+la condición if (i \== j) se cumple únicamente para los elementos de la diagonal principal de la matriz (matrix\[0\]\[0\], matrix\[1\]\[1\] y matrix\[2\]\[2\]), imprimiendo sucesivamente los valores 1, 5 y 9\.
+
+4. C)
+
+array\[4\]\[1\] accede al segundo elemento de la quinta fila cuyo valor es 4, mientras que array\[1\]\[4\] intenta acceder al índice 4 de una submatriz de solo dos elementos ({0, 1}), desencadenando una excepción ArrayIndexOutOfBoundsException en tiempo de ejecución.
+
+5. B)
+
+array2D\[0\].length obtiene el tamaño de la primera fila (3), array2D\[1\].getClass().isArray() confirma que la submatriz de la segunda fila es un arreglo (true), y array2D\[0\]\[1\] accede al valor en el índice 1 del primer subarreglo (1)
+
+6. A)
+
+al ejecutar Arrays.sort(fruts) los elementos del arreglo se ordenan alfabéticamente quedando como \["Apple", "Banana", "Orange"\], por lo que la búsqueda binaria mediante Arrays.binarySearch(fruts, "Banana") ubica la cadena "Banana" en la posición o índice 1
+
+7. B)
+
+La sobrecarga del método Arrays.sort(strings, 1, 4\) ordena únicamente el subrango desde el índice 1 (inclusive) hasta el índice 4 (exclusivo), dejando intacto el elemento "2" en la posición 0 y ordenando de forma ascendente los elementos de las posiciones 1 a 3 ("3", "1", "4") como "1", "3" y "4"
+
+8. E)
+
+System.arraycopy(array, 2, array, 1, 2\) copia 2 elementos a partir del índice 2 (los valores 3 y 4\) y los pega desde el índice 1, dejando el arreglo como {1, 3, 4, 4, 5}, por lo que al imprimir array\[1\] (3) y array\[4\] (5) de forma consecutiva se muestra 35
+
+9. A), B)
+
+En la a se instancia adecuadamente una matriz bidimensional de 2x2 inicializando sus celdas de forma individual, mientras que en la b la posición array3D\[i\]\[j\] corresponde a una referencia de tipo unidimensional (int\[\]), por lo que resulta totalmente válido asignarle el arreglo array (int\[\]); por su parte, las opciones restantes fallan debido a errores de sintaxis (falta de comas) o discordancia de dimensiones.
+
+## Clases, métodos y constructores 
+
+1. B)
+
+La sintaxis de tres puntos suspensivos (...), conocida como varargs (argumentos variables), se coloca después del tipo de dato en la declaración de un parámetro para permitir que el método reciba cero o más argumentos de dicho tipo como si fuera un arreglo.
+
+2. D)
+
+La palabra clave this(...) acompañada de paréntesis se utiliza explícitamente para invocar a otro constructor de la misma clase (sobrecarga de constructores), debiendo colocarse siempre como la primera sentencia dentro del cuerpo del constructor desde el cual se realiza la llamada.
+
+3. G)
+
+En Java el término "constructor por defecto" (default constructor) se refiere exclusivamente al constructor sin argumentos que el compilador genera automáticamente cuando no se define explícitamente ningún constructor en la clase (como en X), mientras que la clase Y posee un constructor explícito sin argumentos y la clase Z cuenta únicamente con un constructor parametrizado.
+
+4. C)
+
+La firma de un método exige estricta coincidencia en la cantidad y tipo de parámetros al momento de la invocación, por lo que intentar llamarlo con menos argumentos de los declarados genera un error en tiempo de compilación
+
+5. D)
+
+Un objeto es inmutable (como los objetos de la clase String o Integer) cuando sus campos y su estado interno permanecen constantes e inalterables desde el momento en que se completa su construcción.
+
+6. A)
+
+Al ejecutar new X("hello"), el constructor de la clase X recibe la cadena "hello" y actualiza el valor del atributo de instancia str (sobrescribiendo el valor inicial "default"). Posteriormente, al invocar el método .print(), se imprime en consola el contenido actual de str, que es "hello"
+
+7. B)
+
+El paso de parámetros para tipos de datos primitivos se realiza estrictamente por valor (pass-by-value). Al invocar m(i), el método recibe únicamente una copia del valor 12, por lo que la modificación i \+= 7 afecta solo a la variable local dentro de m y no altera la variable i del método main.
+
+8. C)
+
+Los argumentos  primitivos (como int) se pasan estrictamente por valor (pass-by-value).
+
+9. D)
+
+los métodos estáticos se pueden sobrecargar  de la misma forma que los métodos de instancia, siempre que varíe la cantidad o el tipo de sus parámetros
+
+10. E)
+
+En la línea 6, la variable local price se declara de tipo Simple (la clase), por lo que intentar asignar directamente un entero en la línea 7 provoca un error de compilación por incompatibilidad de tipos; al cambiar esa sentencia por price.price \= 4;, se accede de forma correcta al atributo de instancia price de tipo float, permitiendo la asignación gracias a la conversión implícita de int a float
+
+11. B)
+
+Al ejecutar la asignación jian \= bob;, la variable de referencia jian pasa a apuntar exactamente al mismo objeto en memoria que bob, por lo que modificar jian.name \= "Jian"; altera el atributo del objeto compartido y ocasiona que bob.name también devuelva "Jian".
+
+12. B)
+
+El parámetro de longitud variable (varargs, indicado con ...) debe ser obligatoriamente el último parámetro declarado en la firma de un método; por lo tanto, intentar definir public void go(String... y, int x) ubica el entero x después del varargs, lo cual violenta las reglas sintácticas del lenguaje y provoca un error de compilación
+
+13. B)
+
+El paso de parámetros se realiza por valor (copiando la referencia), por lo que la reasignación realizada dentro de op1 afecta únicamente a la variable local del método y además la clase String es inmutable, dejando la variable msg intacta con su valor original de "Hello".
+
+14.  A), D)
+
+El compilador genera un constructor por defecto únicamente cuando la clase no incluye la definición de ningún constructor explícito (opción d), y este constructor por defecto siempre contiene una llamada implícita super() que invoca al constructor sin argumentos de la superclase (opción a)
+
+15. C), D), F)
+
+La relación has-a (composición/agregación) se establece mediante los atributos de una clase: la opción c es correcta porque Class2 declara directamente el campo v2, la f es correcta porque Class2 contiene una referencia de tipo Class1, y la d es correcta de forma transitiva, ya que Class3 posee un objeto Class2, el cual contiene un Class1 que a su vez alberga el atributo v1
+
+16.  E)
+
+En main la variable local z vale 6 e imprime primero 6; al llamar a doStuff(), se define una variable local z \= 5 y se invoca a doStuff2() que modifica la variable de instancia z asignándole 4, imprimiendo luego el 5 local de doStuff(); finalmente, de regreso en main, el segundo print imprime nuevamente la variable local de main (6) y el último print muestra la variable de instancia myScope.z (4).
+
+17. A)
+
+El código genera errores de compilación por dos razones principales: en el método main falta el operador de asignación \= al declarar la instancia (ScopeTest myScope new ScopeTest();), y además dentro del método doStuff() se intenta acceder a la variable myScope, la cual es una variable local definida únicamente dentro de main y no está visible en el ámbito (scope) de doStuff().
+
+18. D)
+
+Al instanciar obj1 sin argumentos, la instrucción this("Default") ejecuta primero el cuerpo del constructor parametrizado antes de imprimir la confirmación del constructor sin argumentos; posteriormente, las llamadas a display() muestran los valores usando "Default", mientras que para obj2 se invoca directamente el constructor parametrizado seguido de sus respectivos métodos display() en ese orden secuencial
+
+19. C)
+
+Al instanciar obj1 con el constructor sin argumentos, la llamada this(10) invoca primero al constructor parametrizado imprimiendo la salida para el valor 10 antes de imprimir la línea del constructor sin argumentos; posteriormente, las llamadas a calculate() ejecutan en orden sus respectivas versiones sobrecargadas para obj1 y obj2, reflejando exactamente la secuencia descrita en la opción c
+
+20. C)
+
+Al encadenar constructores mediante this(...), el constructor delegado se ejecuta por completo antes de continuar con la sentencia de impresión del constructor invocador; por esta razón, la instanciación de obj1 imprime primero la salida del constructor de dos parámetros seguida por la del constructor por defecto, la de obj2 imprime la del constructor de dos parámetros seguida por la del de un argumento, y finalmente obj3 imprime directamente la del constructor de dos parámetros
+
+21. A)
+
+La invocación recursiva directa o indirecta entre constructores utilizando this(...) está estrictamente prohibida y es detectada por el compilador (recursive constructor invocation), por lo que intentar que el constructor sin argumentos invoque al parametrizado mientras este último a su vez intenta llamar al primero impide la compilación del programa
+
+22. A)
+
+El compilador detecta de forma estática la invocación cíclica o recursiva entre constructores realizada mediante this(...), impidiendo la compilación del código debido a la referencia circular directa entre el constructor sin argumentos y el constructor parametrizado.
+
+23. F)
+
+En las reglas de sobrecarga de métodos de Java, la conversión por ensanchamiento de tipos primitivos (widening) tiene prioridad sobre el empaquetado automático (autoboxing) y los argumentos de longitud variable (varargs); por esta razón, al pasar un primitivo de tipo float, Java promociona su valor automáticamente a double para invocar la versión doIt(double d) en lugar de empaquetarlo a Float o usar varargs
+
+24. B)
+
+Compilan exactamente tres de los fragmentos (el 1, el 3 y el 4): los sintagmas String...a y String... a son declaraciones válidas de varargs, mientras que String\[\]... a también es sintácticamente correcto al definir un varargs de arreglos de cadenas (String\[\]\[\]); por el contrario, el segundo fragmento falla al contener un solo punto (String. a) y el quinto falla porque la sintaxis de Java no permite colocar corchetes \[\] después de los tres puntos de varargs (String...\[\] a)
+
+## 
+
+## Modificadores, static e inicialización.
+
+1. B)
+
+El paquete java.lang es especial en Java porque se importa de manera implícita y automática en todos los programas, por lo que se pueden utilizar libremente sus clases fundamentales (como System, String o Math) sin necesidad de incluir una sentencia import explícita\[
+
+2. B)
+
+El paquete java.lang es importado implícitamente por el compilador de Java en todas las clases de un programa, lo que permite utilizar sus tipos y clases fundamentales —como String, System, Math u Object— sin necesidad de incluir una sentencia import explícita.
+
+3. B)
+
+El método sumar está correctamente declarado como estático (static), lo que permite invocarlo directamente a través del nombre de su clase Utilidades.sumar(5, 10\) sin necesidad de instanciar un objeto, calculando la suma de los argumentos de entrada y retornando el valor 15 que se concatena junto con el texto para imprimirse en consola.
+
+4. B)
+
+Un bloque de código estático (static { ... }) se ejecuta únicamente una sola vez cuando la JVM carga por primera vez la clase en memoria, sirviendo principalmente para inicializar variables estáticas antes de que se cree cualquier objeto o se invoque cualquier método de dicha clase
+
+5. A)
+
+El modificador de acceso protected en Java especifica que el atributo o método es accesible desde la propia clase donde se declara, cualquier clase dentro del mismo paquete (package) y cualquier subclase que herede de la clase original, incluso si se encuentra definida en un paquete diferente.
+
+6. C), E) 
+
+Las palabras reservadas public y static pueden preceder a la palabra class en Java para definir la visibilidad de una clase de nivel superior o para declarar una clase anidada estática respectivamente, mientras que las demás opciones corresponden a modificadores aplicables únicamente a variables, métodos o bloques de código
+
+7. B), C) F), H)
+
+Una clase de nivel superior (top-level class) en Java solo puede llevar el modificador de acceso public (o el nivel por defecto si se omite) junto con los modificadores de comportamiento abstract, final o strictfp, mientras que los modificadores private, protected y static están estrictamente reservados para clases anidadas o miembros internos de otra clase
+
+8. C
+
+El código no compila porque el método one() está declarado como private en la superclase X, lo que impide que la subclase Y pueda acceder a él desde el método two(); cambiar su modificador de acceso a protected permite que las subclases tengan acceso e invoquen dicho método heredado de manera adecuada
+
+9. A)
+
+El código compila y ejecuta correctamente imprimiendo 420, ya que el método main al estar definido dentro de la propia clase ExtendedA tiene pleno acceso a su constructor private, el cual invoca mediante super(...) el constructor protected de la superclase ClassA, asignando e imprimiendo la propiedad pública sin ningún problema
+
+10. B)
+
+Al cargar la clase en la JVM se ejecuta primero el bloque estático imprimiendo static; posteriormente, al instanciar el objeto con new Prioridad(), se ejecuta el bloque de inicialización de instancia imprimiendo default antes del propio cuerpo del constructor que imprime Constructor, finalizando con la llamada al método getSaludo() que imprime Variable
+
+11. C)
+
+El bloque estático se ejecuta primero al cargarse la clase en la JVM imprimiendo Static block; enseguida, la llamada a staticMethod() imprime Static method, y finalmente, al instanciar el objeto con new StaticNonStaticBlockTest(), se ejecuta el bloque de instancia imprimiendo Instance block justo antes de la ejecución del constructor que imprime Constructor.
+
+12. D)
+
+Al instanciar el segundo objeto con m \= new Test(), la variable m se reasigna a una nueva instancia donde la inicialización del atributo ("A") y la ejecución secuencial de los dos bloques de instancia ("B" y "C") forman la cadena "ABC", a la cual finalmente el constructor sin argumentos le concatena "X", imprimiendo "ABCX”
+
+13. C)
+
+Los bloques estáticos se ejecutan una sola vez en el orden en que aparecen al cargarse la clase en la JVM, mientras que los bloques de instancia se ejecutan en orden secuencial cada vez que se crea un nuevo objeto justo antes del constructor, repitiendo el proceso para cada una de las dos instancias.
